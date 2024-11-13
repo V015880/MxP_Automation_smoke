@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" data-provider-thread-count = "1" parallel="tests"  name="ICON EPIC MxP Suite">
+	<parameter name="projid" value="405-SMOKE" />
+	<parameter name="projname" value="Epic_MxP_SMOKE" />
+	<parameter name="InstallNewbuild" value="N" />
+	<test name="MxP_Suite_GC" parallel = "tests" >
+		<parameter name="AppName" value="com.experitest.ExperiBank" />
+		<parameter name="DeviceName" value="VDI" />		
+		<parameter name="TestCaseSheet" value="TCsheet - smoke.xls" />
+		<parameter name="object_Repository" value="objectrepository.xlsx"/>
+		<!--<parameter name="TestCaseSheet" value="TCSheet_VS_SchdLogs.xlsx" />-->
+		<parameter name="dockerhubURL" value="http://localhost:4444/wd/hub" />
+		<parameter name="browser" value="gc" />
+		<parameter name="webresolution" value="1600,900" />
+		<parameter name="environment" value="smoke-QA" />
+		<parameter name="runsubsuitegroup" value="NA,(NA)" />
+		<!--parameter name="runsubsuitegroup" value="TC1~TC35,(TC20~TC30,TC33)" /-->
+		<parameter name="reportfolderpath" value="C:\\Reports\\FrameworkEnhance" />
+		<parameter name="execnresultsDB" value="10.164.81.222:3306" />		
+		<classes>
+			<class name="com.united.RunClassNonParallel" />
+		</classes>
+	</test>
+</suite> <!-- Suite --> 
